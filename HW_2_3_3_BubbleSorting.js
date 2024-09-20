@@ -49,16 +49,31 @@ console.log(sumOfMathAndItPoints);
 
 //Пузырьковая сортировка для нашего массива и вывод в консоль для наглядности
 
-  for (let i = sumOfMathAndItPoints.length-1; i >= 0; i--){
-    for(let j = 1; j <= i; j++){
-      if(sumOfMathAndItPoints[j-1] > sumOfMathAndItPoints[j]){
-        let temp = sumOfMathAndItPoints[j-1];
-        sumOfMathAndItPoints[j-1] = sumOfMathAndItPoints[j];
-        sumOfMathAndItPoints[j] = temp;
-     }
+for (let i = sumOfMathAndItPoints.length - 1; i >= 0; i--) {
+  for (let j = 1; j <= i; j++) {
+    console.log("__________новая итерация");
+    console.log(
+      "сравниваем пару " +
+        sumOfMathAndItPoints[j - 1] +
+        " и " +
+        sumOfMathAndItPoints[j]
+    );
+    console.log(
+      "сравниваем индексы " +
+        sumOfMathAndItPoints.indexOf(sumOfMathAndItPoints[j - 1]) +
+        " и " +
+        sumOfMathAndItPoints.indexOf(sumOfMathAndItPoints[j])
+    );
+
+    if (sumOfMathAndItPoints[j - 1] > sumOfMathAndItPoints[j]) {
+      let temp = sumOfMathAndItPoints[j - 1];
+      console.log("работаем с массивом " + sumOfMathAndItPoints);
+
+      sumOfMathAndItPoints[j - 1] = sumOfMathAndItPoints[j];
+
+      sumOfMathAndItPoints[j] = temp;
     }
-   }
-   console.log(sumOfMathAndItPoints);
-
-
-
+    console.log("получился промежуточный массив " + sumOfMathAndItPoints);
+  }
+}
+console.log(sumOfMathAndItPoints);
